@@ -1,0 +1,330 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+body {
+    background-color: #e4f2f2;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 0;
+}
+body::before {
+    content: "";
+    position: fixed;
+    top: -100px;
+    left: -100px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle at center, #d6a217, #d0b056);
+    border-radius: 50%;
+    z-index: 0;
+}
+.icon {
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    margin-left: 10px;
+    color: #d6a217;
+}
+.dashboard {
+    display: flex;
+    width: 90%;
+    max-width: 1300px;
+    min-height: 90vh;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    background-color: #f6f9f8;
+}
+.sidebar {
+    background-color: #425c5a;
+    color: white;
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 25px;
+}
+.perfil {
+    text-align: center;
+}
+.foto-perfil {
+    border-radius: 50%;
+    margin-bottom: 20px;
+    height: 70px;
+    width: auto;  
+}
+.menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 20px 0;
+    transition: 0.3s;
+    font-weight: 500;
+}
+.menu a:hover,
+.menu a.activo {
+    background-color: #3b6565;
+    border-radius: 8px;
+    padding-left: 8px;
+}
+.usuarios-activos {
+    text-align: center;
+}
+.avatars {
+    display: flex;
+    align-items: center; 
+}
+.avatars img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #425c5a;
+    transition: transform 0.2s ease-in-out;
+}
+.avatars img + img {
+    margin-left: -15px;
+}
+.avatars img:hover {
+    transform: translateY(-2px);
+    z-index: 10;
+}
+.avatars span {
+    background-color: #d2b04c; 
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 50%;
+    height: 40px; 
+    width: 40px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -15px;
+}
+.usuarios-activos {
+    background-color: #425c5a;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: white;
+}
+.usuarios-activos p {
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+.contenido {
+    flex: 1;
+    background-color: #f6f9f8;
+    padding: 40px 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    overflow-y: auto;
+}
+.tarjetas {
+    display: flex;
+    gap: 25px;
+    justify-content: space-between;
+}
+.tarjeta {
+    flex: 1;
+    position: relative;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+.tarjeta.gold {
+    background-color: #c89c32;
+    color: white;
+}
+.tarjeta.dark {
+    background-color: #425c5a;
+    color: white;
+}
+.tarjeta.mapa{
+    background-color: #425c5a;
+    color: white;
+}
+.icono-avion {
+    position: absolute;
+    bottom: -40px;
+    right: -20px;
+    width: 200px;   
+}
+.icono-mapa {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    width: 150px;   
+}
+.precio {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;   
+}
+.informacion {
+    display: flex;
+    gap: 25px;
+}
+.tabla, .grafico {
+    flex: 1; 
+    background-color: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    min-height: 300px;
+    max-height: 300px;
+}
+.informacion .grafico {
+    flex: 1;
+}
+table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+th, td {
+    text-align: left;
+    padding: 8px;
+    font-size: 14px;
+}
+.graficos-secundarios {
+    flex:1;
+    display: flex;
+    gap: 25px;
+}
+.grafico canvas {
+    flex-grow: 1; 
+    max-height: 100%;
+    width: 100% !important; 
+    height: auto !important; 
+}
+.contenedor-dona {
+    position: relative; 
+    flex-grow: 1;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+.texto-dona-central {
+    position: absolute; 
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}
+.tarjeta-viajes {
+    flex: 2;
+    max-width: none; 
+    margin: 0; 
+    background-color: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+.tarjeta-viajes h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+.tarjeta-viajes p {
+    margin-top: 0;
+    color: #888;
+    font-size: 0.9em;
+}
+.contenedor-tabla {
+    padding-top: 20px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 15px 0;
+    text-align: left;
+    border: none;
+    font-size: 0.95em;
+    vertical-align: middle;
+}
+thead th {
+    color: #333;
+    font-weight: bold;
+    font-size: 0.9em;
+    padding-bottom: 10px;
+}
+thead tr {
+    border-bottom: 2px dashed #e0e0e0;
+}
+.fila-separadora td {
+    border-bottom: 2px dashed #e0e0e0;
+}
+.celda-miembro {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.img-perfil {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+.info-miembro { 
+    display: flex;
+    flex-direction: column;
+}
+.nombre-miembro {
+    font-weight: 600;
+    color: #333;
+}
+.email-miembro {
+    font-size: 0.8em;
+    color: #999;
+}
+.celda-total-miembros {
+    text-align: center;
+}
+.conteo-miembros {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #f7b731;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1em;
+}
+.mapa {
+    width: 150px; 
+    margin-top: 15px; 
+    border-radius: 8px; 
+    height: auto; 
+    display: block;
+}
+.onda-fondo {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+.onda-fondo svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.dashboard, .sidebar, .contenido {
+    position: relative;
+    z-index: 1;
+}
